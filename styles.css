@@ -432,7 +432,373 @@ footer {
     border-top: 1px solid rgba(255,255,255,.08);
 }
 
-@media (max-width: 700px) {
+.project-header {
+    position: relative;
+    z-index: 10;
+}
+
+.project-header .header-mid {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+    background: rgba(20,20,20,.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.project-page {
+    overflow: hidden;
+}
+
+.project-intro {
+    padding: 55px 8% 100px;
+}
+
+.project-back {
+    display: inline-block;
+    color: #888;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.project-back:hover {
+    color: #fff;
+    transform: translateX(-5px);
+}
+
+.project-heading {
+    padding: 100px 0 70px;
+}
+
+.project-label,
+.content-label {
+    color: #888;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.project-heading h1 {
+    margin-top: 30px;
+    font-size: clamp(80px,13vw,155px);
+    line-height: .85;
+    letter-spacing: -10px;
+}
+
+.project-heading h1 span {
+    color: #777;
+}
+
+.project-description {
+    max-width: 550px;
+    margin-top: 35px;
+    color: #999;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.project-cover {
+    position: relative;
+    min-height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,.1);
+    background: linear-gradient(135deg,#292929,#111);
+}
+
+.project-cover::before {
+    content: "";
+    position: absolute;
+    width: 550px;
+    height: 550px;
+    background: radial-gradient(circle,rgba(255,255,255,.12),transparent 70%);
+}
+
+.project-cover img {
+    position: relative;
+    width: 65%;
+    max-height: 330px;
+    object-fit: contain;
+}
+
+.cover-overlay {
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+    left: 25px;
+    display: flex;
+    justify-content: space-between;
+    color: #aaa;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.project-meta {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+    max-width: 800px;
+    margin-top: 40px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255,255,255,.1);
+}
+
+.project-meta span {
+    color: #777;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.project-meta p {
+    margin-top: 10px;
+    color: #eee;
+    font-size: 13px;
+}
+
+.project-content {
+    display: grid;
+    grid-template-columns: 25% 1fr;
+    gap: 50px;
+    padding: 120px 10%;
+    border-top: 1px solid rgba(255,255,255,.07);
+}
+
+.content-number {
+    color: #777;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.content-main {
+    max-width: 850px;
+}
+
+.content-main h2,
+.gallery-heading h2 {
+    margin: 25px 0 35px;
+    font-size: clamp(42px,6vw,75px);
+    line-height: .98;
+    letter-spacing: -4px;
+}
+
+.content-main h2 span,
+.gallery-heading h2 span {
+    color: #777;
+}
+
+.content-main > p:not(.content-label) {
+    max-width: 650px;
+    margin-top: 20px;
+    color: #999;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.objective-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 50px;
+}
+
+.objective-list article {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 28px 0;
+    border-top: 1px solid rgba(255,255,255,.1);
+}
+
+.objective-list article > span {
+    color: #777;
+    font-size: 12px;
+}
+
+.objective-list h3 {
+    font-size: 20px;
+}
+
+.objective-list p {
+    margin-top: 10px;
+    color: #999;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.project-gallery {
+    padding: 110px 8%;
+    background: rgba(255,255,255,.025);
+}
+
+.gallery-heading {
+    margin-bottom: 50px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,.1);
+    background: #1a1a1a;
+}
+
+.gallery-large {
+    grid-column: 1 / -1;
+}
+
+.gallery-item img {
+    display: block;
+    width: 100%;
+    min-height: 220px;
+    object-fit: cover;
+    transition: transform .5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.03);
+}
+
+.gallery-item span {
+    display: block;
+    padding: 15px 18px;
+    color: #888;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.project-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 35px;
+}
+
+.project-technologies span {
+    padding: 12px 22px;
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 50px;
+    background: rgba(255,255,255,.04);
+    color: #ddd;
+    font-size: 12px;
+}
+
+.project-review {
+    padding-bottom: 130px;
+}
+
+.project-next {
+    padding: 75px 10%;
+    border-top: 1px solid rgba(255,255,255,.08);
+}
+
+.project-next p {
+    color: #777;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.project-next a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Space Grotesk',sans-serif;
+    font-size: clamp(25px,5vw,55px);
+    font-weight: 700;
+    letter-spacing: -2px;
+    transition: .3s;
+}
+
+.project-next a:hover {
+    color: #999;
+}
+
+.project-next a span:last-child {
+    font-size: 35px;
+}
+
+@media (max-width:700px) {
+    .project-header {
+        padding: 20px;
+    }
+
+    .project-header .header-mid {
+        top: 15px;
+    }
+
+    .project-intro {
+        padding: 40px 20px 70px;
+    }
+
+    .project-heading {
+        padding: 80px 0 50px;
+    }
+
+    .project-heading h1 {
+        font-size: 75px;
+        letter-spacing: -5px;
+    }
+
+    .project-cover {
+        min-height: 260px;
+    }
+
+    .project-cover img {
+        width: 80%;
+    }
+
+    .project-meta {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .project-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 75px 20px;
+    }
+
+    .content-main h2,
+    .gallery-heading h2 {
+        font-size: 43px;
+        letter-spacing: -2px;
+    }
+
+    .project-gallery {
+        padding: 75px 20px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-large {
+        grid-column: auto;
+    }
+
+    .project-next {
+        padding: 60px 20px;
+    }
+
     header {
         padding: 20px;
         flex-wrap: wrap;
